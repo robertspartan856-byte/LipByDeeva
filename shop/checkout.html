@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — Lip by Deeva Beauty</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="../images/logo.png" alt="Lip by Deeva Beauty" class="header-logo">
+  </div>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../shop.html">Shop</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+  <button class="mobile-menu-button" aria-label="Toggle menu">☰</button>
+</header>
+<main class="section-block">
+  <div class="page-hero">
+    <p class="eyebrow">Secure Checkout</p>
+    <h1>Complete your order</h1>
+    <p class="muted">Review your selected items, enter shipping details, and place your order safely. Your order will be confirmed immediately and saved for future reference.</p>
+  </div>
+  <div class="checkout-layout">
+    <section class="checkout-form">
+      <div class="summary-card">
+        <h2>Billing & Shipping</h2>
+        <form id="checkout-form">
+          <div class="form-grid">
+            <label>
+              Full Name
+              <input type="text" name="name" placeholder="Your full name" required>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              Shipping Address
+              <input type="text" name="address" placeholder="Street, city, postcode" required>
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" placeholder="+234 800 000 0000">
+            </label>
+            <label>
+              Payment Method
+              <select name="payment" required>
+                <option value="">Choose a payment method</option>
+                <option value="card">Card payment</option>
+                <option value="transfer">Bank transfer</option>
+                <option value="cod">Cash on delivery</option>
+              </select>
+            </label>
+          </div>
+          <p id="payment-summary" class="summary-note">Choose a payment method to continue.</p>
+          <label>
+            Order Notes
+            <textarea name="notes" placeholder="Add delivery instructions or gift notes"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary-btn">Place Order</button>
+            <a href="cart.html" class="btn secondary-btn">Return to Cart</a>
+          </div>
+        </form>
+      </div>
+    </section>
+    <aside class="order-summary">
+      <div class="summary-card">
+        <h2>Your Cart</h2>
+        <div id="checkout-cart-items" class="checkout-items"></div>
+        <p class="summary-line">Total: <strong id="checkout-total">₦0</strong></p>
+        <p class="summary-note">Shipping is calculated at checkout. Review your order before confirming.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Lip by Deeva Beauty. All Rights Reserved.</p>
+</footer>
+<div id="card-payment-modal" class="modal hidden">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <h2>Card Payment</h2>
+    <form id="card-form">
+      <label>
+        Card Number
+        <input type="text" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+      </label>
+      <div class="form-row">
+        <label>
+          Expiry Date
+          <input type="text" name="expiry" placeholder="MM/YY" maxlength="5" required>
+        </label>
+        <label>
+          CVV
+          <input type="text" name="cvv" placeholder="123" maxlength="4" required>
+        </label>
+      </div>
+      <button type="submit" class="btn primary-btn">Pay Now</button>
+    </form>
+  </div>
+</div>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
